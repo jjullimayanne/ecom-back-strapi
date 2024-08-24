@@ -2,7 +2,7 @@ Documentação do Endpoint: Obter Dados dos Produtos
 
 ~~~javascript
 Endpoint:
-GET http://localhost:1337/api/products
+GET [http://localhost:1337/api/products](https://ecom-back-strapi.onrender.com/api/products)
 ~~~
 
 Descrição:
