@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Products"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "productId": {
+      "type": "uid"
+    },
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "descricao": {
+      "type": "text"
+    },
+    "categoria": {
+      "type": "string"
+    },
+    "preco": {
+      "type": "float",
+      "required": true
+    },
+    "imagens": {
+      "type": "json",
+      "multiple": true
+    },
+    "tamanhosDisponiveis": {
+      "type": "json",
+      "multiple": true
+    },
+    "cor": {
+      "type": "string"
+    },
+    "estoque": {
+      "type": "json",
+      "required": true
+    },
+    "peso": {
+      "type": "string"
+    },
+    "sku": {
+      "type": "string",
+      "required": true
+    },
+    "disponibilidade": {
+      "type": "boolean",
+      "default": true
+    },
+    "dataLancamento": {
+      "type": "date"
+    },
+    "tags": {
+      "type": "json",
+      "required": false
+    }
+  }
+}
