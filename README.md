@@ -46,6 +46,8 @@ Se a requisição for bem-sucedida, o servidor retornará um status code 200 OK 
 
 Exemplo de Resposta:
 
+~~~json
+
 {
     "data": [
         {
@@ -160,6 +162,8 @@ Exemplo de Resposta:
         }
     }
 }
+~~~
+
 Possíveis Erros:
 401 Unauthorized: O token de autenticação está ausente, inválido ou expirado.
 
