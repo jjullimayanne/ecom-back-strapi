@@ -1,6 +1,9 @@
 Documentação do Endpoint: Obter Dados dos Produtos
+
+~~~javascript
 Endpoint:
 GET http://localhost:1337/api/products
+~~~
 
 Descrição:
 Este endpoint permite que você obtenha uma lista de produtos do sistema. É necessário fornecer uma chave de autenticação e especificar o tipo de conteúdo nos cabeçalhos da requisição.
@@ -11,15 +14,19 @@ URL: http://localhost:1337/api/products
 Cabeçalhos da Requisição:
 Para acessar este endpoint, você deve incluir os seguintes cabeçalhos na requisição:
 
-Authorization
+### Authorization
 
 Descrição: Este cabeçalho deve conter o token de autenticação do usuário que está fazendo a requisição.
-Formato: Bearer <seu_token_de_autenticacao>
+
+- Formato: Bearer <seu_token_de_autenticacao>
+
+~~~javascript
+
 Exemplo:
-makefile
 Copiar código
 Authorization: Bearer abcdefghijklmnopqrstuvwxyz1234567890
-Content-Type
+~~~
+
 
 Descrição: Especifica o tipo de conteúdo da requisição. Para este endpoint, deve ser application/json.
 Formato: Content-Type: application/json
@@ -27,19 +34,34 @@ Exemplo:
 bash
 Copiar código
 Content-Type: application/json
+
 Exemplo de Requisição com curl:
-bash
-Copiar código
+
+
+~~~javascript
 curl -X GET "http://localhost:1337/api/products" \
 -H "Authorization: Bearer abcdefghijklmnopqrstuvwxyz1234567890" \
 -H "Content-Type: application/json"
-Exemplo de Requisição com Postman:
+~~~
+
+### Exemplo de Requisição com Postman:
+
 Abra o Postman e crie uma nova requisição.
+
 Selecione o método GET.
+
 Insira a URL: http://localhost:1337/api/products.
+
 Vá para a aba Headers e adicione os seguintes cabeçalhos:
+curl -X GET "http://localhost:1337/api/products" 
+
+~~~javascript
+-H "Authorization: Bearer abcdefghijklmnopqrstuvwxyz1234567890" \
+-H "Content-Type: application/json"
 Key: Authorization | Value: Bearer abcdefghijklmnopqrstuvwxyz1234567890
 Key: Content-Type | Value: application/json
+~~~
+
 Clique em Send para enviar a requisição.
 Resposta Esperada:
 Se a requisição for bem-sucedida, o servidor retornará um status code 200 OK e um corpo da resposta contendo uma lista de produtos em formato JSON.
