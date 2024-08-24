@@ -2,7 +2,7 @@ Documentação do Endpoint: Obter Dados dos Produtos
 
 ~~~javascript
 Endpoint:
-GET [http://localhost:1337/api/products](https://ecom-back-strapi.onrender.com/api/products)
+GET https://ecom-back-strapi.onrender.com/api/products
 ~~~
 
 Descrição:
@@ -39,8 +39,8 @@ Exemplo de Requisição com curl:
 
 
 ~~~javascript
-curl -X GET "http://localhost:1337/api/products" \
--H "Authorization: Bearer abcdefghijklmnopqrstuvwxyz1234567890" \
+curl -X GET "https://ecom-back-strapi.onrender.com/api/products" \
+-H "Authorization: Bearer <your_key> \
 -H "Content-Type: application/json"
 ~~~
 
@@ -50,15 +50,15 @@ Abra o Postman e crie uma nova requisição.
 
 Selecione o método GET.
 
-Insira a URL: http://localhost:1337/api/products.
+Insira a URL: https://ecom-back-strapi.onrender.com/api/products
 
 Vá para a aba Headers e adicione os seguintes cabeçalhos:
-curl -X GET "http://localhost:1337/api/products" 
+
 
 ~~~javascript
 -H "Authorization: Bearer abcdefghijklmnopqrstuvwxyz1234567890" \
 -H "Content-Type: application/json"
-Key: Authorization | Value: Bearer abcdefghijklmnopqrstuvwxyz1234567890
+Key: Authorization | Value: Bearer <your_key>
 Key: Content-Type | Value: application/json
 ~~~
 
