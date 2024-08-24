@@ -46,37 +46,119 @@ Se a requisição for bem-sucedida, o servidor retornará um status code 200 OK 
 
 Exemplo de Resposta:
 
-json
-Copiar código
 {
-  "data": [
-    {
-      "id": 1,
-      "attributes": {
-        "nome": "Camiseta Básica Nike",
-        "descricao": "Camiseta básica 100% algodão, confortável e versátil.",
-        "categoria": "Roupas",
-        "preco": 29.99,
-        "imagens": [
-          "https://imgcentauro-a.akamaihd.net/1366x1366/M0Q9P001.jpg",
-          "https://imgcentauro-a.akamaihd.net/768x768/M0Q9P001A2.jpg"
-        ],
-        "tamanhosDisponiveis": ["P", "M", "G"],
-        "cor": "Preto",
-        "estoque": {
-          "P": 10,
-          "M": 15,
-          "G": 5
+    "data": [
+        {
+            "id": 1,
+            "attributes": {
+                "createdAt": "2024-08-24T03:34:02.688Z",
+                "updatedAt": "2024-08-24T03:34:02.688Z",
+                "publishedAt": "2024-08-24T03:34:02.683Z",
+                "productId": "produto-12345",
+                "nome": "Camiseta Básica Nike",
+                "descricao": "Camiseta básica 100% algodão, confortável e versátil.",
+                "categoria": "Roupas",
+                "preco": 29.99,
+                "tamanhosDisponiveis": "P",
+                "cor": "Preto",
+                "estoque": {
+                    "P": 10,
+                    "M": 15,
+                    "G": 5
+                },
+                "peso": "0.5kg",
+                "sku": "CAM-123-BASIC",
+                "disponibilidade": true,
+                "dataLancamento": "2024-01-01",
+                "tags": [
+                    "moda",
+                    "básico",
+                    "algodão"
+                ],
+                "imagens": [
+                    "https://imgcentauro-a.akamaihd.net/1366x1366/M0Q9P001.jpg",
+                    "https://imgcentauro-a.akamaihd.net/768x768/M0Q9P001A2.jpg"
+                ]
+            }
         },
-        "peso": "0.5kg",
-        "sku": "CAM-123-BASIC",
-        "disponibilidade": true,
-        "dataLancamento": "2024-01-01",
-        "tags": ["moda", "básico", "algodão"]
-      }
-    },
-    // Outros produtos...
-  ]
+        {
+            "id": 2,
+            "attributes": {
+                "createdAt": "2024-08-24T03:35:55.060Z",
+                "updatedAt": "2024-08-24T03:35:55.060Z",
+                "publishedAt": "2024-08-24T03:35:55.057Z",
+                "productId": "1",
+                "nome": "Camiseta Básica Nike",
+                "descricao": "Camiseta básica 100% algodão, confortável e versátil.",
+                "categoria": "Roupas",
+                "preco": 29.99,
+                "tamanhosDisponiveis": "P",
+                "cor": "Preto",
+                "estoque": {
+                    "P": 10,
+                    "M": 15,
+                    "G": 5
+                },
+                "peso": "0.5kg",
+                "sku": "CAM-123-BASIC",
+                "disponibilidade": true,
+                "dataLancamento": "2024-01-01",
+                "tags": [
+                    "moda",
+                    "básico",
+                    "algodão"
+                ],
+                "imagens": [
+                    "https://imgcentauro-a.akamaihd.net/1366x1366/M0Q9P001.jpg",
+                    "https://imgcentauro-a.akamaihd.net/768x768/M0Q9P001A2.jpg"
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "attributes": {
+                "createdAt": "2024-08-24T03:38:13.523Z",
+                "updatedAt": "2024-08-24T03:38:13.523Z",
+                "publishedAt": "2024-08-24T03:38:13.520Z",
+                "productId": "2",
+                "nome": "Camiseta Nike",
+                "descricao": "Camiseta Masculina Nike Manga Curta Academy 23 Top",
+                "categoria": "Roupas",
+                "preco": 109.99,
+                "tamanhosDisponiveis": [
+                    "P",
+                    "M"
+                ],
+                "cor": "Preto",
+                "estoque": {
+                    "P": 10,
+                    "M": 15,
+                    "G": 5
+                },
+                "peso": "0.5kg",
+                "sku": "CAM-123-BASIC",
+                "disponibilidade": true,
+                "dataLancamento": "2024-01-01",
+                "tags": [
+                    "moda",
+                    "básico",
+                    "algodão"
+                ],
+                "imagens": [
+                    "https://imgcentauro-a.akamaihd.net/1366x1366/98394331.jpgg",
+                    "https://imgcentauro-a.akamaihd.net/768x768/98394331A1.jpg"
+                ]
+            }
+        }
+    ],
+    "meta": {
+        "pagination": {
+            "page": 1,
+            "pageSize": 25,
+            "pageCount": 1,
+            "total": 3
+        }
+    }
 }
 Possíveis Erros:
 401 Unauthorized: O token de autenticação está ausente, inválido ou expirado.
