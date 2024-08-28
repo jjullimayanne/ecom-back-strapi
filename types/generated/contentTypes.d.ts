@@ -362,6 +362,47 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiMarketProductMarketProduct extends Schema.CollectionType {
+  collectionName: 'market_products';
+  info: {
+    singularName: 'market-product';
+    pluralName: 'market-products';
+    displayName: 'marketProducts';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
+    category: Attribute.String;
+    price: Attribute.Float & Attribute.Required;
+    images: Attribute.JSON;
+    unitOfMeasure: Attribute.String & Attribute.Required;
+    stock: Attribute.Integer & Attribute.Required;
+    weight: Attribute.String;
+    sku: Attribute.String & Attribute.Required;
+    availability: Attribute.Boolean & Attribute.DefaultTo<true>;
+    releaseDate: Attribute.Date;
+    tags: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::market-product.market-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::market-product.market-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Schema.CollectionType {
   collectionName: 'products';
   info: {
@@ -841,6 +882,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::market-product.market-product': ApiMarketProductMarketProduct;
       'api::product.product': ApiProductProduct;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
