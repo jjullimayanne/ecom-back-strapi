@@ -1,61 +1,208 @@
-# 🚀 Getting started with Strapi
+Documentação do Endpoint: Obter Dados dos Produtos
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+~~~javascript
+Endpoint:
+GET https://ecom-back-strapi.onrender.com/api/products
+~~~
 
-### `develop`
+Descrição:
+Este endpoint permite que você obtenha uma lista de produtos do sistema. É necessário fornecer uma chave de autenticação e especificar o tipo de conteúdo nos cabeçalhos da requisição.
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+Requisição:
+Método HTTP: GET
+URL: http://localhost:1337/api/products
+Cabeçalhos da Requisição:
+Para acessar este endpoint, você deve incluir os seguintes cabeçalhos na requisição:
 
-```
-npm run develop
-# or
-yarn develop
-```
+### Authorization
 
-### `start`
+Descrição: Este cabeçalho deve conter o token de autenticação do usuário que está fazendo a requisição.
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+- Formato: Bearer <seu_token_de_autenticacao>
 
-```
-npm run start
-# or
-yarn start
-```
+~~~javascript
 
-### `build`
+Exemplo:
+Copiar código
+Authorization: Bearer abcdefghijklmnopqrstuvwxyz1234567890
+~~~
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
 
-```
-npm run build
-# or
-yarn build
-```
+Descrição: Especifica o tipo de conteúdo da requisição. Para este endpoint, deve ser application/json.
+Formato: Content-Type: application/json
+Exemplo:
+bash
+Copiar código
+Content-Type: application/json
 
-## ⚙️ Deployment
+Exemplo de Requisição com curl:
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
 
-```
-yarn strapi deploy
-```
+~~~javascript
+curl -X GET "https://ecom-back-strapi.onrender.com/api/products" \
+-H "Authorization: Bearer <your_key> \
+-H "Content-Type: application/json"
+~~~
 
-## 📚 Learn more
+### Exemplo de Requisição com Postman:
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+Abra o Postman e crie uma nova requisição.
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+Selecione o método GET.
 
-## ✨ Community
+Insira a URL: https://ecom-back-strapi.onrender.com/api/products
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+Vá para a aba Headers e adicione os seguintes cabeçalhos:
 
----
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+~~~javascript
+-H "Authorization: Bearer abcdefghijklmnopqrstuvwxyz1234567890" \
+-H "Content-Type: application/json"
+Key: Authorization | Value: Bearer <your_key>
+Key: Content-Type | Value: application/json
+~~~
+
+Clique em Send para enviar a requisição.
+Resposta Esperada:
+Se a requisição for bem-sucedida, o servidor retornará um status code 200 OK e um corpo da resposta contendo uma lista de produtos em formato JSON.
+
+Exemplo de Resposta:
+
+~~~json
+
+{
+    "data": [
+        {
+            "id": 1,
+            "attributes": {
+                "createdAt": "2024-08-24T03:34:02.688Z",
+                "updatedAt": "2024-08-24T03:34:02.688Z",
+                "publishedAt": "2024-08-24T03:34:02.683Z",
+                "productId": "produto-12345",
+                "nome": "Camiseta Básica Nike",
+                "descricao": "Camiseta básica 100% algodão, confortável e versátil.",
+                "categoria": "Roupas",
+                "preco": 29.99,
+                "tamanhosDisponiveis": "P",
+                "cor": "Preto",
+                "estoque": {
+                    "P": 10,
+                    "M": 15,
+                    "G": 5
+                },
+                "peso": "0.5kg",
+                "sku": "CAM-123-BASIC",
+                "disponibilidade": true,
+                "dataLancamento": "2024-01-01",
+                "tags": [
+                    "moda",
+                    "básico",
+                    "algodão"
+                ],
+                "imagens": [
+                    "https://imgcentauro-a.akamaihd.net/1366x1366/M0Q9P001.jpg",
+                    "https://imgcentauro-a.akamaihd.net/768x768/M0Q9P001A2.jpg"
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "attributes": {
+                "createdAt": "2024-08-24T03:35:55.060Z",
+                "updatedAt": "2024-08-24T03:35:55.060Z",
+                "publishedAt": "2024-08-24T03:35:55.057Z",
+                "productId": "1",
+                "nome": "Camiseta Básica Nike",
+                "descricao": "Camiseta básica 100% algodão, confortável e versátil.",
+                "categoria": "Roupas",
+                "preco": 29.99,
+                "tamanhosDisponiveis": "P",
+                "cor": "Preto",
+                "estoque": {
+                    "P": 10,
+                    "M": 15,
+                    "G": 5
+                },
+                "peso": "0.5kg",
+                "sku": "CAM-123-BASIC",
+                "disponibilidade": true,
+                "dataLancamento": "2024-01-01",
+                "tags": [
+                    "moda",
+                    "básico",
+                    "algodão"
+                ],
+                "imagens": [
+                    "https://imgcentauro-a.akamaihd.net/1366x1366/M0Q9P001.jpg",
+                    "https://imgcentauro-a.akamaihd.net/768x768/M0Q9P001A2.jpg"
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "attributes": {
+                "createdAt": "2024-08-24T03:38:13.523Z",
+                "updatedAt": "2024-08-24T03:38:13.523Z",
+                "publishedAt": "2024-08-24T03:38:13.520Z",
+                "productId": "2",
+                "nome": "Camiseta Nike",
+                "descricao": "Camiseta Masculina Nike Manga Curta Academy 23 Top",
+                "categoria": "Roupas",
+                "preco": 109.99,
+                "tamanhosDisponiveis": [
+                    "P",
+                    "M"
+                ],
+                "cor": "Preto",
+                "estoque": {
+                    "P": 10,
+                    "M": 15,
+                    "G": 5
+                },
+                "peso": "0.5kg",
+                "sku": "CAM-123-BASIC",
+                "disponibilidade": true,
+                "dataLancamento": "2024-01-01",
+                "tags": [
+                    "moda",
+                    "básico",
+                    "algodão"
+                ],
+                "imagens": [
+                    "https://imgcentauro-a.akamaihd.net/1366x1366/98394331.jpgg",
+                    "https://imgcentauro-a.akamaihd.net/768x768/98394331A1.jpg"
+                ]
+            }
+        }
+    ],
+    "meta": {
+        "pagination": {
+            "page": 1,
+            "pageSize": 25,
+            "pageCount": 1,
+            "total": 3
+        }
+    }
+}
+~~~
+
+Possíveis Erros:
+401 Unauthorized: O token de autenticação está ausente, inválido ou expirado.
+
+Mensagem de erro:
+json
+Copiar código
+{
+  "error": "Unauthorized"
+}
+400 Bad Request: Há um problema com a requisição, como cabeçalhos ausentes ou malformados.
+
+Mensagem de erro:
+json
+Copiar código
+{
+  "error": "Bad Request"
+}
+Notas:
+Certifique-se de que o token de autenticação seja válido e tenha permissão para acessar os produtos.
+O endpoint deve ser acessado a partir do ambiente correto (por exemplo, localhost durante o desenvolvimento). Para ambientes de produção, substitua localhost pelo domínio apropriado.
