@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "games",
+  "info": {
+    "singularName": "game",
+    "pluralName": "games",
+    "displayName": "Games"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "releaseDate": {
+      "type": "date"
+    },
+    "platforms": {
+      "type": "json",
+      "multiple": true
+    },
+    "rating": {
+      "type": "float"
+    },
+    "genre": {
+      "type": "string"
+    },
+    "coverArt": {
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

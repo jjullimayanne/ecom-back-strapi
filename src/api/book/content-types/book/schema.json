@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "books",
+  "info": {
+    "singularName": "book",
+    "pluralName": "books",
+    "displayName": "Books"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "author": {
+      "type": "string",
+      "required": true
+    },
+    "genre": {
+      "type": "string"
+    },
+    "publicationDate": {
+      "type": "date"
+    },
+    "price": {
+      "type": "float",
+      "required": true
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true
+    },
+    "pages": {
+      "type": "integer"
+    },
+    "isbn": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "tags": {
+      "type": "json"
+    }
+  }
+}

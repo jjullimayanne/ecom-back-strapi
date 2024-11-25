@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "animes",
+  "info": {
+    "singularName": "anime",
+    "pluralName": "animes",
+    "displayName": "Animes"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "synopsis": {
+      "type": "text"
+    },
+    "episodes": {
+      "type": "integer"
+    },
+    "genre": {
+      "type": "string"
+    },
+    "releaseDate": {
+      "type": "date"
+    },
+    "rating": {
+      "type": "float"
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

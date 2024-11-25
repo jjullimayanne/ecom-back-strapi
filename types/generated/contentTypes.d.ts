@@ -362,90 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiMarketProductMarketProduct extends Schema.CollectionType {
-  collectionName: 'market_products';
-  info: {
-    singularName: 'market-product';
-    pluralName: 'market-products';
-    displayName: 'marketProducts';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String & Attribute.Required;
-    description: Attribute.Text;
-    category: Attribute.String;
-    price: Attribute.Float & Attribute.Required;
-    images: Attribute.JSON;
-    unitOfMeasure: Attribute.String & Attribute.Required;
-    stock: Attribute.Integer & Attribute.Required;
-    weight: Attribute.String;
-    sku: Attribute.String & Attribute.Required;
-    availability: Attribute.Boolean & Attribute.DefaultTo<true>;
-    releaseDate: Attribute.Date;
-    tags: Attribute.JSON;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::market-product.market-product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::market-product.market-product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiProductProduct extends Schema.CollectionType {
-  collectionName: 'products';
-  info: {
-    singularName: 'product';
-    pluralName: 'products';
-    displayName: 'Products';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    productId: Attribute.UID;
-    nome: Attribute.String & Attribute.Required;
-    descricao: Attribute.Text;
-    categoria: Attribute.String;
-    preco: Attribute.Float & Attribute.Required;
-    imagens: Attribute.JSON;
-    tamanhosDisponiveis: Attribute.JSON;
-    cor: Attribute.String;
-    estoque: Attribute.JSON & Attribute.Required;
-    peso: Attribute.String;
-    sku: Attribute.String & Attribute.Required;
-    disponibilidade: Attribute.Boolean & Attribute.DefaultTo<true>;
-    dataLancamento: Attribute.Date;
-    tags: Attribute.JSON;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::product.product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::product.product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -872,6 +788,220 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAnimesAnime extends Schema.CollectionType {
+  collectionName: 'animes';
+  info: {
+    singularName: 'anime';
+    pluralName: 'animes';
+    displayName: 'Animes';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    synopsis: Attribute.Text;
+    episodes: Attribute.Integer;
+    genre: Attribute.String;
+    releaseDate: Attribute.Date;
+    rating: Attribute.Float;
+    coverImage: Attribute.Media & Attribute.Required;
+    gallery: Attribute.Media<undefined, true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::animes.anime',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::animes.anime',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBookBook extends Schema.CollectionType {
+  collectionName: 'books';
+  info: {
+    singularName: 'book';
+    pluralName: 'books';
+    displayName: 'Books';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
+    author: Attribute.String & Attribute.Required;
+    genre: Attribute.String;
+    publicationDate: Attribute.Date;
+    price: Attribute.Float & Attribute.Required;
+    coverImage: Attribute.Media & Attribute.Required;
+    gallery: Attribute.Media<undefined, true>;
+    pages: Attribute.Integer;
+    isbn: Attribute.String & Attribute.Required & Attribute.Unique;
+    tags: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::book.book', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::book.book', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFutebolFutebol extends Schema.CollectionType {
+  collectionName: 'futebol';
+  info: {
+    singularName: 'futebol';
+    pluralName: 'futebols';
+    displayName: 'Futebol';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    teamName: Attribute.String & Attribute.Required;
+    founded: Attribute.Date;
+    stadium: Attribute.String;
+    coach: Attribute.String;
+    league: Attribute.String;
+    logo: Attribute.Media & Attribute.Required;
+    gallery: Attribute.Media<undefined, true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::futebol.futebol',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::futebol.futebol',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGameGame extends Schema.CollectionType {
+  collectionName: 'games';
+  info: {
+    singularName: 'game';
+    pluralName: 'games';
+    displayName: 'Games';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
+    releaseDate: Attribute.Date;
+    platforms: Attribute.JSON;
+    rating: Attribute.Float;
+    genre: Attribute.String;
+    coverArt: Attribute.Media & Attribute.Required;
+    gallery: Attribute.Media<undefined, true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::game.game', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::game.game', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMovieMovie extends Schema.CollectionType {
+  collectionName: 'movies';
+  info: {
+    singularName: 'movie';
+    pluralName: 'movies';
+    displayName: 'Movies';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
+    releaseDate: Attribute.Date;
+    genre: Attribute.String;
+    rating: Attribute.Float;
+    director: Attribute.String;
+    poster: Attribute.Media & Attribute.Required;
+    gallery: Attribute.Media<undefined, true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::movie.movie',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::movie.movie',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProductProduct extends Schema.CollectionType {
+  collectionName: 'products';
+  info: {
+    singularName: 'product';
+    pluralName: 'products';
+    displayName: 'Products';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    productId: Attribute.UID;
+    nome: Attribute.String & Attribute.Required;
+    descricao: Attribute.Text;
+    categoria: Attribute.String;
+    preco: Attribute.Float & Attribute.Required;
+    imagens: Attribute.JSON;
+    tamanhosDisponiveis: Attribute.JSON;
+    cor: Attribute.String;
+    estoque: Attribute.JSON & Attribute.Required;
+    peso: Attribute.String;
+    sku: Attribute.String & Attribute.Required;
+    disponibilidade: Attribute.Boolean & Attribute.DefaultTo<true>;
+    dataLancamento: Attribute.Date;
+    tags: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -882,8 +1012,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::market-product.market-product': ApiMarketProductMarketProduct;
-      'api::product.product': ApiProductProduct;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -892,6 +1020,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::animes.anime': ApiAnimesAnime;
+      'api::book.book': ApiBookBook;
+      'api::futebol.futebol': ApiFutebolFutebol;
+      'api::game.game': ApiGameGame;
+      'api::movie.movie': ApiMovieMovie;
+      'api::product.product': ApiProductProduct;
     }
   }
 }

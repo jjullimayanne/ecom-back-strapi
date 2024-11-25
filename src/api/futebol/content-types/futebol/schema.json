@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "futebol",
+  "info": {
+    "singularName": "futebol",
+    "pluralName": "futebols",
+    "displayName": "Futebol"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "teamName": {
+      "type": "string",
+      "required": true
+    },
+    "founded": {
+      "type": "date"
+    },
+    "stadium": {
+      "type": "string"
+    },
+    "coach": {
+      "type": "string"
+    },
+    "league": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
