@@ -30,13 +30,13 @@
       "type": "string"
     },
     "poster": {
-      "type": "media",
-      "multiple": false,
-      "required": true
+      "type": "string",
+      "required": true,
+      "regex": "^https?:\\/\\/.+$"
     },
     "gallery": {
-      "type": "media",
-      "multiple": true
+      "type": "json",
+      "required": false
     }
   }
 }
