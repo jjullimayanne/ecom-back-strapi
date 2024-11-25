@@ -788,7 +788,7 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
-export interface ApiAnimesAnime extends Schema.CollectionType {
+export interface ApiAnimeAnime extends Schema.CollectionType {
   collectionName: 'animes';
   info: {
     singularName: 'anime';
@@ -811,13 +811,13 @@ export interface ApiAnimesAnime extends Schema.CollectionType {
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::animes.anime',
+      'api::anime.anime',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::animes.anime',
+      'api::anime.anime',
       'oneToOne',
       'admin::user'
     > &
@@ -1020,7 +1020,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
-      'api::animes.anime': ApiAnimesAnime;
+      'api::anime.anime': ApiAnimeAnime;
       'api::book.book': ApiBookBook;
       'api::futebol.futebol': ApiFutebolFutebol;
       'api::game.game': ApiGameGame;
