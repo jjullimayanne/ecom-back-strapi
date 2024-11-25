@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * product controller
+ * game controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::product.product');
+module.exports = createCoreController('api::game.game');
