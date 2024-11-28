@@ -30,13 +30,11 @@
       "type": "float"
     },
     "coverImage": {
-      "type": "media",
-      "multiple": false,
+      "type": "string",
       "required": true
     },
     "gallery": {
-      "type": "media",
-      "multiple": true
+      "type": "json"
     }
   }
 }
